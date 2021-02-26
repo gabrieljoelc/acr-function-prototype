@@ -11,15 +11,13 @@ This is a working prototype with of an Azure Function that pulls a container ima
 
 Build it:
 ```
-docker build --tag my-container-registry.azurecr.io/my-image-repository/docker-prototype .
+docker build --tag my-container-registry.azurecr.io/my-image-repository/my-image-name .
 ```
 
 Push it:
 ```
-docker push my-container-registry.azurecr.io/my-image-repository/docker-prototype
+docker push my-container-registry.azurecr.io/my-image-repository/my-image-name
 ```
-
-
 ## Terraform
 
 Add a `do.tfvar` file that looks something like this:
@@ -37,4 +35,10 @@ Then you can run this command to apply:
 
 ```
 terraform apply -var-file="do.tfvars"
+```
+
+## HTTP trigger test
+
+```
+curl https://my-azure-function.azurewebsites.net/api/HttpExample\?name\=Functions -v
 ```
