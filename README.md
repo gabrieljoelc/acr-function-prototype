@@ -23,11 +23,17 @@ docker push my-container-registry.azurecr.io/my-image-repository/my-image-name
 Add a `do.tfvar` file that looks something like this:
 
 ```hcl
-registry_name="my-container-registry"
-app_name="my-azure-function"
-creds_acr={
-  username="<azure container registry (service principal or something) username>"
-  password="<azure container registry (service principal or something) password>"
+registry_name                 = "my-container-registry"
+image_name                    = "my-image-name"
+app_name                      = "my-azure-function"
+resource_group_container_name = "my-container-resource-group"
+resource_group_function = {
+  name     = "my-function-resource-group"
+  location = "westus2"
+}
+creds_acr = {
+  username = "<azure container registry (service principal or something) username>"
+  password = "<azure container registry (service principal or something) password>"
 }
 ```
 
