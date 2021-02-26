@@ -74,6 +74,7 @@ resource "azurerm_function_app" "self" {
 
     site_config {
       always_on         = true
-      linux_fx_version  = "DOCKER|${data.azurerm_container_registry.self.login_server}/${var.image_name}:${var.tag}"
+      # don't need this anymore because we are deploying with Azure Pipelines (see /azure-pipelines.yml)
+      #linux_fx_version  = "DOCKER|${data.azurerm_container_registry.self.login_server}/${var.image_name}:${var.tag}"
     }
 }
