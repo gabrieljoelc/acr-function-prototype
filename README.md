@@ -26,7 +26,6 @@ Add a `do.tfvar` file that looks something like this:
 
 ```hcl
 registry_name="my-container-registry"
-image_name="my-image-repository/docker-prototype"
 app_name="my-azure-function"
 creds_acr={
   username="<azure container registry (service principal or something) username>"

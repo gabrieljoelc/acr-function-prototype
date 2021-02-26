@@ -8,13 +8,6 @@ variable "registry_name" {
 variable "app_name" {
 }
 
-variable "image_name" {
-}
-
-variable "tag" {
-  default = "latest"
-}
-
 variable "creds_acr" {
   type = object({
     username = string
